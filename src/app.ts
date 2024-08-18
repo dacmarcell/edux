@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import swaggerUI from "swagger-ui-express";
 
-import studentRouter from "./routes/student-routes";
+import studentRouter from "./student/student-routes";
 import courseRouter from "./course/course-router";
 import enrollmentRouter from "./enrollment/enrollment-router";
 import teacherRouter from "./routes/teacher-router";
