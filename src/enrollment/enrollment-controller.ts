@@ -6,7 +6,7 @@ import {
   unenrollCourseForTeacher,
   unenrollmentByEmail,
   unenrollmentByID,
-} from "../services/enrollment-service";
+} from "./enrollment-service";
 
 export const enrollStudentByID = async (
   request: Request,
