@@ -4,7 +4,7 @@ import {
   getUserEmail,
   login,
   verifyJwt,
-} from "../services/auth-service";
+} from "./auth-service";
 import Joi from "joi";
 
 export const loginUser = async (req: Request, res: Response) => {

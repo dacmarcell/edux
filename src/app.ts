@@ -6,7 +6,7 @@ import studentRouter from "./routes/student-routes";
 import courseRouter from "./routes/course-router";
 import enrollmentRouter from "./routes/enrollment-router";
 import teacherRouter from "./routes/teacher-router";
-import authRouter from "./routes/auth-router";
+import authRouter from "./auth/auth-router";
 
 import swaggerDocument from "../swagger.json";
 
