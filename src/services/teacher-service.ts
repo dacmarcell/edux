@@ -2,7 +2,7 @@ import prisma from "../../prisma/prisma-client";
 
 import { Teacher } from "../utils/types";
 import { findStudentByEmail, validateTeacher } from "../utils/helpers";
-import { findCourseByName } from "./course-service";
+import { findCourseByName } from "../course/course-service";
 
 export const readTeacher = async () => {
   const teacher = await prisma.teacher.findMany({
