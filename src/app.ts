@@ -5,7 +5,7 @@ import swaggerUI from "swagger-ui-express";
 import studentRouter from "./student/student-routes";
 import courseRouter from "./course/course-router";
 import enrollmentRouter from "./enrollment/enrollment-router";
-import teacherRouter from "./routes/teacher-router";
+import teacherRouter from "./teacher/teacher-router";
 import authRouter from "./auth/auth-router";
 
 import swaggerDocument from "../swagger.json";

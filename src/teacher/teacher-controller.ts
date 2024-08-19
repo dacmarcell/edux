@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import Joi from "joi";
 
-import teacherService from "../services/teacher-service";
+import teacherService from "./teacher-service";
 
 export const read = async (_: Request, response: Response) => {
   try {
