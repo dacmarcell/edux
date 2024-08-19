@@ -5,12 +5,7 @@ export type Student = {
   password: string;
 };
 
-export type Teacher = {
-  name: string;
-  email: string;
-  password: string;
-  isCoordinator: boolean;
-};
+
 
 export type JwtData = {
   email: string;

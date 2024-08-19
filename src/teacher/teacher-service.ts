@@ -1,11 +1,11 @@
+import { Teacher } from "@prisma/client";
 import prisma from "../../prisma/prisma-client";
-
-import { Teacher } from "../utils/types";
 import { findCourseByName } from "../course/course-service";
 import { findStudentByEmail } from "../student/student-service";
 import { teacherValidationSchema } from "../utils/validation";
+import { CreateTeacher, UpdateTeacher } from "./teacher.interfaces";
 
-export const validateTeacher = (teacher: Teacher) => {
+export const validateTeacher = (teacher: Partial<Teacher>) => {
   const validation = teacherValidationSchema.safeParse(teacher);
   return validation;
 };
@@ -20,7 +20,7 @@ export const readTeacher = async () => {
 };
 
 export const createTeacher = async (
-  { name, email, password, isCoordinator }: Teacher,
+  { name, email, password, isCoordinator }: CreateTeacher,
   courseName: string
 ) => {
   const validation = validateTeacher({ name, email, password, isCoordinator });
@@ -62,21 +62,21 @@ export const createTeacher = async (
   return { data: { message: create, error: false }, status: 201 };
 };
 
+const generateTeacher = (teacher: CreateTeacher | UpdateTeacher) => ({
+  name: teacher.name,
+  email: teacher.email,
+  password: teacher.password,
+  isCoordinator: teacher.isCoordinator,
+});
+
 export const updateTeacher = async (
-  { name, email, password, isCoordinator }: Teacher,
+  teacher: UpdateTeacher,
   id: string
 ) => {
-  const newTeacher: Teacher = {
-    name,
-    email,
-    password,
-    isCoordinator,
-  };
-
-  const validation = validateTeacher(newTeacher);
-
-  if (!validation.success) {
-    return { data: { message: validation, error: true }, status: 400 };
+  const newTeacher = generateTeacher(teacher);
+  const { success, error } = validateTeacher(newTeacher);
+  if (!success) {
+    return { data: { message: error, error: true }, status: 400 };
   }
 
   const updateTeacher = await prisma.teacher.update({

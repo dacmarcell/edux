@@ -38,6 +38,7 @@ export const create = async (request: Request, response: Response) => {
       { name, email, isCoordinator, password },
       courseName
     );
+
     return response.status(createStudent.status).json(createStudent.data);
   } catch (error) {
     return response.status(500).json({ message: error, error: true });
