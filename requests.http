@@ -5,9 +5,9 @@ POST http://localhost:3333/api/v1/students
 Content-Type: application/json
 
 {
-    "firstName": "Marcell",
-    "lastName": "Andrade",
-    "email": "maarcel@gmail.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "johndoe@email.com",
     "password": "12231238903"
 
 }
@@ -16,7 +16,7 @@ PUT http://localhost:3333/api/v1/students/clsj04rky0000784ogwws7vcp
 Content-Type: application/json
 
 {
-    "email":"asdsa@asdas.com"
+    "email":"johndoe@email.com"
 }
 ###
 DELETE http://localhost:3333/api/v1/students/clsj04rky0000784ogwws7vcp
@@ -64,7 +64,7 @@ POST http://localhost:3333/api/v1/enroll
 Content-Type: application/json
 
 {
-    "studentEmail":"maarcell@gmail.com",
+    "studentEmail":"johndoe@email.com",
     "courseName":"Data Structures"
 }
 
@@ -73,7 +73,7 @@ POST http://localhost:3333/api/v1/unenroll
 Content-Type: application/json
 
 {
-    "studentEmail":"maarcell@gmail.com",
+    "studentEmail":"johndoe@email.com",
     "courseName":"Data Structures"
 }
 
@@ -83,7 +83,7 @@ POST http://localhost:3333/api/v1/teacher-enroll
 Content-Type: application/json
 
 {
-    "teacherEmail":"profmarcell@dacti.com.eu",
+    "teacherEmail":"johndoe@email.com",
     "courseName":"Data Structures"
 }
 
@@ -93,7 +93,7 @@ POST http://localhost:3333/api/v1/teacher-unenroll
 Content-Type: application/json
 
 {
-    "teacherEmail":"profmarcell@gmail.com",
+    "teacherEmail":"johndoe@email.com",
     "courseName":"Data Structures"
 }
 
@@ -105,8 +105,8 @@ POST http://localhost:3333/api/v1/teachers
 Content-Type: application/json
 
 {
-    "name":"Professor Marcell",
-    "email":"profamarcell@dacti.com.eu",
+    "name":"John Doe",
+    "email":"johndoe@email.com",
     "isCoordinator": true,
     "courseName":"Data Structures"
 }
@@ -115,7 +115,7 @@ PUT http://localhost:3333/api/v1/teachers/clskg6cc500006jrmbe65g94m
 Content-Type: application/json
 
 {
-    "name":"Porofessor Martielo"
+    "name":"John Doe"
 }
 ###
 DELETE http://localhost:3333/api/v1/teachers/clskg6cc500006jrmbe65g94m
