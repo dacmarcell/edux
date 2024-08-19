@@ -1,9 +1,14 @@
 import prisma from "../../prisma/prisma-client";
 
 import { Teacher } from "../utils/types";
-import { validateTeacher } from "../utils/helpers";
 import { findCourseByName } from "../course/course-service";
 import { findStudentByEmail } from "../student/student-service";
+import { teacherValidationSchema } from "../utils/validation";
+
+export const validateTeacher = (teacher: Teacher) => {
+  const validation = teacherValidationSchema.safeParse(teacher);
+  return validation;
+};
 
 export const readTeacher = async () => {
   const teacher = await prisma.teacher.findMany({
