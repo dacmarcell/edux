@@ -10,15 +10,3 @@ export const validateTeacher = (teacher: Teacher) => {
 };
 
 //Student
-export const findStudentByID = async (id: string) => {
-  const student = await prisma.student.findUnique({
-    where: { id },
-  });
-  return student;
-};
-export const findStudentByEmail = async (email: string) => {
-  const student = await prisma.student.findUnique({
-    where: { email },
-  });
-  return student;
-};

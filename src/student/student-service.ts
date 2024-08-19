@@ -1,8 +1,7 @@
 import { studentValidationSchema } from "../utils/validation";
 import { Student } from "../utils/types";
 import prisma from "../../prisma/prisma-client";
-import { findStudentByEmail } from "../utils/helpers";
-import { findTeacherByEmail } from "./teacher-service";
+import { findTeacherByEmail } from "../teacher/teacher-service";
 
 export const readStudents = async () => {
   const students = await prisma.student.findMany({
@@ -91,6 +90,22 @@ export const deleteStudent = async (id: string) => {
   await prisma.student.delete({ where: { id } });
   return { data: null, status: 204 };
 };
+
+const findStudentByID = async (id: string) => {
+  const student = await prisma.student.findUnique({
+    where: { id },
+  });
+  return student;
+};
+
+
+export const findStudentByEmail = async (email: string) => {
+  const student = await prisma.student.findUnique({
+    where: { email },
+  });
+  return student;
+};
+
 
 const studentService = {
   readStudents,
