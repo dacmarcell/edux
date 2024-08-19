@@ -1,7 +1,7 @@
 import { Teacher } from "@prisma/client";
 import prisma from "../../prisma/prisma-client";
-import { findCourseByName } from "../course/course-service";
-import { findStudentByEmail } from "../student/student-service";
+import { findCourseByName } from "../course/course.service";
+import { findStudentByEmail } from "../student/student.service";
 import { teacherValidationSchema } from "../utils/validation";
 import { CreateTeacher, UpdateTeacher } from "./teacher.interfaces";
 

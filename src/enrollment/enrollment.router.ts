@@ -6,7 +6,7 @@ import {
   teacherCourseEnrollment,
   unenrollStudentByEmail,
   unenrollStudentByID,
-} from "./enrollment-controller";
+} from "./enrollment.controller";
 
 const enrollmentRouter = Router();
 

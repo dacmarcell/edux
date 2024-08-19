@@ -5,7 +5,7 @@ import {
   create,
   update,
   remove,
-} from "./student-controller";
+} from "./student.controller";
 
 const studentRouter = Router();
 
